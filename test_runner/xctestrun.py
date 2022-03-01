@@ -340,6 +340,10 @@ class XctestRunFactory(object):
     if self._work_dir:
       self._test_root_dir = os.path.join(self._work_dir, 'TEST_ROOT')
       xctestrun_file_path = os.path.join(self._test_root_dir, 'xctestrun.plist')
+      
+      print(">>> _test_root_dir", self._test_root_dir)
+      print(">>> xctestrun_file_path", xctestrun_file_path)
+      
       if os.path.exists(xctestrun_file_path):
         logging.info('Skips generating xctestrun file which is generated.')
         self._xctestrun_obj = XctestRun(xctestrun_file_path)
@@ -354,7 +358,7 @@ class XctestRunFactory(object):
       self._delete_work_dir = True
     self._test_root_dir = os.path.join(self._work_dir, 'TEST_ROOT')
     if not os.path.exists(self._test_root_dir):
-      os.mkdir(self._test_root_dir)
+      os.kdir(self._test_root_dir)
 
     if  self._test_type != ios_constants.TestType.LOGIC_TEST:
       self._app_under_test_dir = _MoveAndReplaceFile(
@@ -385,6 +389,8 @@ class XctestRunFactory(object):
         test_type=self._test_type,
         aut_bundle_id=(bundle_util.GetBundleId(self._app_under_test_dir)
                        if self._app_under_test_dir else None))
+
+    print(">>> _xctestrun_obj", self._xctestrun_obj)                       
     return self._xctestrun_obj
 
   def Close(self):
@@ -701,7 +707,7 @@ class XctestRunFactory(object):
         'TestingEnvironmentVariables': test_envs,
     }
 
-    print(">>> hello world4")
+    print(">>> hello world5")
     print(">>> ProductModuleName", self._test_name.replace("-", "_"))
     print(">>>", self._xctestrun_dict)
 
