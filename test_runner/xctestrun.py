@@ -511,6 +511,9 @@ class XctestRunFactory(object):
             self._app_under_test_dir,
             self._test_bundle_dir],
     }
+    
+    print(">>> ProductModuleName", self._test_name.replace("-", "_"))
+    print(">>>", self._xctestrun_dict)
 
   def _GetUitestRunnerAppFromXcode(self, platform_library_path):
     """Gets the test runner app for uitest from Xcode directory.
