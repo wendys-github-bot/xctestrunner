@@ -511,7 +511,8 @@ class XctestRunFactory(object):
             self._app_under_test_dir,
             self._test_bundle_dir],
     }
-    
+
+    print(">>> hello world3")
     print(">>> ProductModuleName", self._test_name.replace("-", "_"))
     print(">>>", self._xctestrun_dict)
 
@@ -676,6 +677,10 @@ class XctestRunFactory(object):
         'TestingEnvironmentVariables': test_envs
     }
 
+    print(">>> hello world4")
+    print(">>> ProductModuleName", self._test_name.replace("-", "_"))
+    print(">>>", self._xctestrun_dict)
+
   def _GenerateTestRootForLogicTest(self):
     """Generates the test root for Logic test.
 
@@ -695,6 +700,10 @@ class XctestRunFactory(object):
         'TestHostPath': xcode_info_util.GetXctestToolPath(self._sdk),
         'TestingEnvironmentVariables': test_envs,
     }
+
+    print(">>> hello world4")
+    print(">>> ProductModuleName", self._test_name.replace("-", "_"))
+    print(">>>", self._xctestrun_dict)
 
 
 def _MoveAndReplaceFile(src_file, target_parent_dir):
